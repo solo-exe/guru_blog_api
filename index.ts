@@ -36,7 +36,7 @@ app.use((err: Error, req: AuthenticatedRequest, res: Response, next: NextFunctio
                 ...(err?.data ? { data: err.data } : {})
             })
         }
-        console.log('ENTRYFILE ERROR', err);
+        console.log('ROOT FILE ERROR', err);
         return res.status(500).send({ success: false, message: messages[500] });
     }
 });

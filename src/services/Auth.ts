@@ -7,7 +7,7 @@ import { Errors } from './'
 import { isValidEmail } from "../utils";
 import { UserEntity } from '../models'
 
-export default class AuthController {
+export default class Auth {
     private user?: UserEntity;
     private userRepo: Repository<UserEntity>
 
@@ -78,7 +78,6 @@ export default class AuthController {
     }
 
     async deleteAccount(password: string) {
-        console.log('RUNS');
         if (!this.user) throw new Errors.NotFound('User not found')
         const { success } = await this.verifyPassword(password)
         if (!success) throw new Errors.Unauthorized('Invalid password.')

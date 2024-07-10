@@ -6,10 +6,10 @@ import { validatePayload, authorizeUser } from '../middlewares/validation.middle
 
 const router = Router();
 
-router.post('/register', validatePayload(RegisterDTO), authController.register)
+router.post('/register', validatePayload(RegisterDTO, 'body'), authController.register)
 
-router.post('/login', validatePayload(LoginDTO), authController.login)
+router.post('/login', validatePayload(LoginDTO, 'body'), authController.login)
 
-router.delete('/', authorizeUser, validatePayload(DeleteAccountDTO), authController.deleteAccount)
+router.delete('/', authorizeUser, validatePayload(DeleteAccountDTO, 'body'), authController.deleteAccount)
 
 module.exports = router
