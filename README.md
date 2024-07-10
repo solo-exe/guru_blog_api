@@ -2,7 +2,7 @@
 Simple Blog CRUD
 
 ## TO TEST
-Setup local postges db instance
+Setup local postges db instance ||
 Setup .env using the provided ".env.sample" template
 
 LINK TO API DOCUMENTATION WITH SAMPLE RESPONSES
